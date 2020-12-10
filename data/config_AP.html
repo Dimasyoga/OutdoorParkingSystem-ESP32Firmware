@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    function submitMessage() {
+        alert("sending form");
+        setTimeout(function(){ document.location.reload(false); }, 500);
+    }
+</script>
+
+<head>
+    <title>Outdoor Parking System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="ap-body">
+    <h1>Outdoor Parking System</h1>
+    <p>Wifi Config</p>
+    <form action="/set" method="GET">
+        <div>
+            <label for="device_name">Device Name</label>
+            <input name="device_name" id="device_name" value=%DEVICE_NAME%>
+        </div>
+        <div>
+            <label for="device_pass">Device Password</label>
+            <input name="device_pass" id="device_pass" value=%DEVICE_PASS%>
+        </div>
+        <div>
+            <label for="ssid">Target SSID</label>
+            <input name="ssid" id="ssid" value=%TARGET_SSID%>
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input name="pass" id="pass" value=%TARGET_PASS%>
+        </div>
+        <div>
+            <label for="static_ip">Static IP</label>
+            <input name="static_ip" id="static_ip" value=%STATIC_IP%>
+        </div>
+        <div>
+            <label for="static_gateway">Gateway</label>
+            <input name="static_gateway" id="static_gateway" value=%GATEWAY%>
+        </div>
+        <div>
+            <label for="static_subnet">Subnet</label>
+            <input name="static_subnet" id="static_subnet" value=%SUBNET%>
+        </div>
+        <div>
+            <button onclick="submitMessage">save</button>
+        </div>
+    </form>
+    <a href="/reset"><button >reset</button></a>
+</body>
+
+</html>
